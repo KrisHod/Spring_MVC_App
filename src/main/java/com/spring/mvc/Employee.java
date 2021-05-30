@@ -1,12 +1,27 @@
 package com.spring.mvc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Employee {
     private String name;
     private String surname;
     private int salary;
     private String department;
+    Map<String, String> departments;
+    private String carBand;
+    Map<String, String> carBrands;
 
     public Employee() {
+        departments = new HashMap<>();
+        departments.put("IT", "Information Technology");
+        departments.put("HR", "Human Resources");
+        departments.put("Sales", "Sales");
+
+        carBrands = new HashMap<>();
+        carBrands.put("BMW", "BMW");
+        carBrands.put("Audi", "Audi");
+        carBrands.put("Mercedes-Benz", "MB");
     }
 
     public String getName() {
@@ -41,7 +56,37 @@ public class Employee {
         this.department = department;
     }
 
+    public Map<String, String> getDepartments() {
+        return departments;
+    }
 
+    public void setDepartments(Map<String, String> departments) {
+        this.departments = departments;
+    }
 
+    public String getCarBand() {
+        return carBand;
+    }
 
+    public void setCarBand(String carBand) {
+        this.carBand = carBand;
+    }
+
+    public Map<String, String> getCarBrands() {
+        return carBrands;
+    }
+
+    public void setCarBrands(Map<String, String> carBrands) {
+        this.carBrands = carBrands;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", salary=" + salary +
+                ", department='" + department + '\'' +
+                '}';
+    }
 }
